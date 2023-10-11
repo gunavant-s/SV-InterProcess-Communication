@@ -11,7 +11,7 @@ module tb;
   event e1,e2;
   
   task first();
-    while($time <= 200) begin
+    while($time < 200) begin
       $display("Task 1 Trigger");
       #20;
       cnt1 += 1;
@@ -21,7 +21,7 @@ module tb;
   endtask
   
   task second();
-    while($time <= 200) begin
+    while($time < 200) begin
       $display("Task 2 Trigger");
       #40;
       cnt2 += 1;
@@ -63,8 +63,8 @@ endmodule
 # KERNEL: Task 2 Trigger
 # KERNEL: Task 1 Trigger
 # KERNEL: Task 1 Trigger
-# KERNEL: Task 2 Trigger
-# KERNEL: Task 1 Trigger
-# KERNEL: Simulation has finished. There are no more test vectors to simulate.
-# VSIM: Simulation has finished.
+# KERNEL: Task1 executed : 10, Task2 executed : 5
+# RUNTIME: Info: RUNTIME_0068 testbench.sv (31): $finish called.
+# KERNEL: Time: 200 ns,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#34_2@.
+# KERNEL: stopped at time: 200 ns
 */
