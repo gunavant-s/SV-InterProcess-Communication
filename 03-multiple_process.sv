@@ -34,7 +34,7 @@ module tb;
   
 endmodule
 
-/*\
+/*
 # KERNEL: Data sent : -1866196019
 # KERNEL: Data sent : 1497363586
 # KERNEL: Data recieved : 1497363586
