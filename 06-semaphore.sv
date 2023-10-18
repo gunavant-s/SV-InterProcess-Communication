@@ -1,3 +1,6 @@
+// A semaphore is a type of Interposes communication resource used for synchronization and mutual exclusion between any two asynchronous processes. 
+// A semaphore object is a synchronization object that maintains a count between zero and a specified maximum value.
+
 class first;
   
   rand int data;
@@ -5,9 +8,8 @@ class first;
   constraint data_c {data < 10; data > 0;}
  
 endclass
- 
- 
- 
+
+
 class second;
   
   rand int data;
@@ -19,7 +21,7 @@ endclass
  
 class main;
   
-  semaphore sem;
+  semaphore sem; 
   
   first f;
   second s;
@@ -30,7 +32,7 @@ class main;
   
   task send_first();
     
-        sem.get(1);
+    sem.get(1);   // getting the access of semaphore and specifying id of semaphore
     
     for(i = 0; i<10; i++) begin
       f.randomize();
@@ -90,3 +92,27 @@ module tb;
       $finish();
     end
 endmodule
+
+// # KERNEL: First access Semaphore and Data sent : 4
+// # KERNEL: First access Semaphore and Data sent : 6
+// # KERNEL: First access Semaphore and Data sent : 1
+// # KERNEL: First access Semaphore and Data sent : 9
+// # KERNEL: First access Semaphore and Data sent : 2
+// # KERNEL: First access Semaphore and Data sent : 2
+// # KERNEL: First access Semaphore and Data sent : 3
+// # KERNEL: First access Semaphore and Data sent : 6
+// # KERNEL: First access Semaphore and Data sent : 1
+// # KERNEL: First access Semaphore and Data sent : 3
+// # KERNEL: Semaphore Unoccupied
+// # KERNEL: Second access Semaphore and Data sent : 13
+// # KERNEL: Second access Semaphore and Data sent : 15
+// # KERNEL: Second access Semaphore and Data sent : 11
+// # KERNEL: Second access Semaphore and Data sent : 12
+// # KERNEL: Second access Semaphore and Data sent : 16
+// # KERNEL: Second access Semaphore and Data sent : 14
+// # KERNEL: Second access Semaphore and Data sent : 17
+// # KERNEL: Second access Semaphore and Data sent : 11
+// # KERNEL: Second access Semaphore and Data sent : 17
+// # KERNEL: Second access Semaphore and Data sent : 12
+// # KERNEL: Semaphore Unoccupied
+// # RUNTIME: Info: RUNTIME_0068 testbench.sv (98): $finish called.
