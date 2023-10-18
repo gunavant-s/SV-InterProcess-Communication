@@ -104,6 +104,7 @@ endmodule
 // # KERNEL: First access Semaphore and Data sent : 1
 // # KERNEL: First access Semaphore and Data sent : 3
 // # KERNEL: Semaphore Unoccupied
+
 // # KERNEL: Second access Semaphore and Data sent : 13
 // # KERNEL: Second access Semaphore and Data sent : 15
 // # KERNEL: Second access Semaphore and Data sent : 11
